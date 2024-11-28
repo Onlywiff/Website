@@ -1,0 +1,283 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #E157FF, #7800FF); /* Gradient from Presti to Karma colors */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    align-items: center;
+}
+
+/* Header Style (Centered) */
+.title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #ffb400;
+    margin-top: 20px;
+}
+
+/* Character Selection Section */
+.character-selection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    height: 70vh; /* Take up 70% of the viewport height */
+    margin-top: 20px;
+    gap: 20px;
+}
+
+/* Character Card Styles (Presti & Karma) */
+.character-card {
+    position: relative;
+    width: 350px; /* Increased width */
+    height: 550px; /* Increased height */
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px; /* More rounded edges */
+    padding: 40px; /* More padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer; /* Cursor indicates clickability */
+    text-decoration: none; /* Remove underline */
+    z-index: 1; /* Ensure these cards stay behind the Onlywiff circle */
+}
+
+/* Presti Card Background */
+.character-card.presti {
+    background-image: url('images/presti-background.png'); /* Set Presti's background image here */
+}
+
+/* Karma Card Background */
+.character-card.karma {
+    background-image: url('images/karma-background.jpg'); /* Set Karma's background image here */
+}
+
+/* Hover Effects for Presti and Karma */
+.character-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+    filter: brightness(1.2);
+}
+
+/* Glow effect for Presti */
+.character-card.presti:hover {
+    box-shadow: 0 0 20px 10px rgba(120, 0, 255, 0.8); /* Glow effect with #7800FF */
+}
+
+/* Glow effect for Karma */
+.character-card.karma:hover {
+    box-shadow: 0 0 20px 10px rgba(225, 87, 255, 0.8); /* Glow effect with #E157FF */
+}
+
+/* Onlywiff Circle Style (Filled with Avatar) */
+.onlywiff-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the circle */
+    width: 180px; /* Smaller size */
+    height: 180px; /* Smaller size */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    background-color: transparent; /* No extra background color */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Initial box shadow */
+    z-index: 2; /* Put the circle in front of the character cards */
+}
+
+.onlywiff-circle:hover {
+    transform: translate(-50%, -50%) scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 0 20px 15px rgba(120, 0, 255, 0.8); /* Glow effect similar to Presti's */
+    filter: brightness(1.3);
+}
+
+/* Onlywiff Avatar - Fill the Circle */
+.onlywiff-avatar {
+    width: 100%; /* Fill the entire circle */
+    height: 100%; /* Fill the entire circle */
+    border-radius: 50%; /* Round shape */
+    background-image: url('images/onlywiff.jpg'); /* Set the Onlywiff avatar image here */
+    background-size: cover; /* Ensure it covers the circle */
+    background-position: center; /* Center the image */
+    background-color: #ad2cff;
+    box-shadow: 0 0 20px 10px rgba(173, 44, 255, 0.8); /* Glow effect on avatar */
+}
+
+/* Character Avatar */
+.character-avatar {
+    width: 120px; /* Larger avatar */
+    height: 120px; /* Larger avatar */
+    border-radius: 50%; /* Make it circular */
+    margin-bottom: 20px;
+    border: 3px solid #fff;
+    background-size: cover; /* Ensure it covers the circle */
+    background-position: center; /* Center the image */
+}
+
+.character-avatar.karma {
+    background-color: rgba(225, 87, 255, 1);
+    box-shadow: 0 0 20px 10px rgba(225, 87, 255, 0.8); /* Glow effect with #E157FF */
+}
+
+.character-avatar.presti {
+    background-color: rgba(120, 0, 255, 1);
+    box-shadow: 0 0 20px 10px rgba(120, 0, 255, 0.8); /* Glow effect with #7800FF */
+}
+
+/* Character Name */
+.character-name {
+    font-size: 1.7rem; /* Larger font size */
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Description Section */
+.description {
+    /*background-color: #1e1e1e; /* Darker background for contrast */
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Horizontal Info Card for Detailed Info */
+.info-card {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    justify-content: space-between; /* Spread out the content */
+    background: linear-gradient(to bottom Right, #7800FF, #E157FF); /* Gradient from Presti to Karma colors */
+    border-radius: 10px;
+    padding: 15px 20px; /* Reduced padding for a smaller card */
+    margin-top: 40px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    width: 90%; /* Set width to 90% of the screen */
+    max-width: 500px; /* Max width for the card */
+    height: auto; /* Dynamic height */
+    max-height: 250px; /* Max height for the card */
+    min-width: 300px; /* Minimum width to avoid collapse */
+    margin: 0 auto; /* Center horizontally */
+}
+
+/* Avatar Section (align with name) */
+.info-card .avatar-container {
+    width: 80px; /* Avatar container width */
+    height: 80px; /* Avatar container height */
+    border-radius: 50%; /* Make it a circle */
+    overflow: hidden;
+    margin-right: 15px; /* Space between avatar and text */
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the avatar image inside */
+}
+
+/* Avatar Image Styling */
+.info-card .avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Ensure the image inside is also a circle */
+}
+
+/* Character Details (Left side, name and description) */
+.info-card .details {
+    display: flex;
+    flex-direction: column; /* Stack name and description vertically */
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+    flex-grow: 1; /* Allow details to take remaining space */
+    max-width: 50%; /* Prevent details from expanding beyond 50% of the card */
+    word-wrap: break-word; /* Ensure long text wraps properly */
+}
+
+/* Name Styling */
+.info-card .name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #E157FF; /* Accent color for the name */
+    margin-bottom: 5px; /* Adjust spacing */
+}
+
+/* Description Styling */
+.info-card .description-text {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Social Box on the Right Side */
+.social-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Reduced gap between social links */
+    align-items: center;
+    max-width: 40%; /* Allow social links to take up a smaller space */
+}
+
+/* Social Link Style */
+.social-box a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E157FF;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    padding: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 35px; /* Smaller width for social buttons */
+    height: 35px; /* Smaller height for social buttons */
+}
+
+.social-box a:hover {
+    background-color: #bb4ed0;
+    transform: scale(1.1); /* Grow the social link on hover */
+}
+
+/* Discord Link Image */
+.discord-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.discord-link img {
+    max-height: 150px;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.character-avatar.presti {
+    background-image: url('images/presti-avatar.png');
+}
+
+.character-avatar.karma {
+    background-image: url('images/karma-avatar.png');
+}
+
+.hide {
+    display: none;
+}
