@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom right, #E157FF, #7800FF); /* Gradient from Presti to Karma colors */
+    background: linear-gradient(to right, #E157FF, #7800FF); /* Gradient from Presti to Karma colors */
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -164,7 +164,7 @@ body {
     display: flex;
     align-items: center; /* Align items vertically centered */
     justify-content: space-between; /* Spread out the content */
-    background: linear-gradient(to bottom Right, #7800FF, #E157FF); /* Gradient from Presti to Karma colors */
+    background: linear-gradient(to right, #7800FF, #E157FF); /* Gradient from Presti to Karma colors */
     border-radius: 10px;
     padding: 15px 20px; /* Reduced padding for a smaller card */
     margin-top: 40px;
